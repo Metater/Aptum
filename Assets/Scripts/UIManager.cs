@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public AptumClient aptumClient;
+    public Aptum aptumClient;
 
     public enum UIState
     {
@@ -33,10 +33,7 @@ public class UIManager : MonoBehaviour
     public Text joinCodeTextbox;
 
     public Text inviteCodeText;
-    public Text opponentText;
-    public Text selfScoreText;
-    public Text otherScoreText;
-    public Text messages;
+    public Text messagesText;
     private float messageVisableFor = 0;
 
     public GameObject selfGrid;
@@ -45,42 +42,31 @@ public class UIManager : MonoBehaviour
     private bool joiningLobby = false;
     private bool creatingLobby = false;
 
-
-    public int selfScore = 0;
-    public int otherScore = 0;
-
-    public void AddSelfScore(int points)
-    {
-        selfScore += points;
-        selfScoreText.text = "Score: " + selfScore;
-    }
-
-    public void AddOtherScore(int points)
-    {
-        otherScore += points;
-        otherScoreText.text = "Score: " + otherScore;
-    }
-
     private void Start()
     {
         SetUIState(uiState);
-        selfScoreText.text = "Score: 0";
-        otherScoreText.text = "Score: 0";
     }
 
     private void Update()
     {
-        messageVisableFor -= Time.deltaTime;
-        if (messageVisableFor >= 0) messages.gameObject.SetActive(true);
+        if (messageVisableFor >= 0)
+        {
+            messageVisableFor -= Time.deltaTime;
+            messagesText.gameObject.SetActive(true);
+        }
         else
         {
-            messages.gameObject.SetActive(true);
-            messages.text = "";
+            messagesText.gameObject.SetActive(false);
+            messagesText.text = "";
         }
     }
 
     #region ButtonImplementations
-    public void PlayButton()
+    public void SingleplayerButton()
+    {
+        SetUIState(UIState.Game);
+    }
+    public void MultiplayerButton()
     {
         if (!aptumClient.IsConnected)
         {
@@ -225,6 +211,6 @@ public class UIManager : MonoBehaviour
     public void DisplayMessage(string message, float messageVisibleFor = 5)
     {
         this.messageVisableFor = messageVisibleFor;
-        messages.text = message;
+        messagesText.text = message;
     }
 }

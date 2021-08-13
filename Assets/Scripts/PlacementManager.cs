@@ -7,7 +7,7 @@ using AptumShared.Structs;
 
 public class PlacementManager : MonoBehaviour
 {
-    public AptumClient aptumClient;
+    public Aptum aptumClient;
 
     public List<GameObject> placementPoints = new List<GameObject>();
 

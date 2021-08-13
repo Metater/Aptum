@@ -6,7 +6,7 @@ using AptumShared.Enums;
 
 public class BoardHandler : MonoBehaviour
 {
-    public AptumClient aptumClient;
+    public Aptum aptumClient;
 
     public Grid grid;
     [SerializeField] private GameObject cellPrefab;
@@ -154,7 +154,6 @@ public class BoardHandler : MonoBehaviour
             PlaceCell(offsetPos.x, offsetPos.y, color);
         }
         int wipes = TryWipe();
-        aptumClient.uiManager.AddSelfScore(wipes * 10);
 
         if (!CheckPieceFitOnBoard(cells))
         {

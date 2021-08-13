@@ -12,11 +12,11 @@ namespace AptumServer
     public class AptumClientListener : INetEventListener
     {
         private NetManager client;
-        private AptumClient aptumClient;
+        private Aptum aptumClient;
 
         public NetPacketProcessor packetProcessor = new NetPacketProcessor();
 
-        public AptumClientListener(AptumClient aptumClient)
+        public AptumClientListener(Aptum aptumClient)
         {
             this.aptumClient = aptumClient;
             packetProcessor.SubscribeReusable<DenyPacket, NetPeer>(OnDenyPacketReceived);

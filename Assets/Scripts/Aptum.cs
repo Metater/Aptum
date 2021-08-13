@@ -5,8 +5,10 @@ using LiteNetLib;
 using LiteNetLib.Utils;
 using AptumServer;
 using AptumShared.Packets;
+using AptumClient;
+using Assets.Scripts.ClientHandler;
 
-public class AptumClient : MonoBehaviour
+public class Aptum : MonoBehaviour
 {
     public bool IsConnected { get; private set; } = false;
     public bool IsInGame { get; private set; } = false;
@@ -21,11 +23,24 @@ public class AptumClient : MonoBehaviour
     public BoardHandler selfBoard;
     public BoardHandler otherBoard;
 
+    public NetSendUpdateHandler netSendUpdateHandler;
+    public GraphicsUpdateHandler graphicsUpdateHandler;
+    public UIWriteUpdateHandler uiWriteUpdateHandler;
+    public NetworkUpdateHandler networkUpdateHandler;
+
     private void Start()
     {
+        netSendUpdateHandler = new NetSendUpdateHandler(this);
+        graphicsUpdateHandler = new GraphicsUpdateHandler(this);
+        uiWriteUpdateHandler = new UIWriteUpdateHandler(this);
+        networkUpdateHandler = new NetworkUpdateHandler(this);
+
+        AptumClientManager.I.Init(netSendUpdateHandler, graphicsUpdateHandler, uiWriteUpdateHandler, networkUpdateHandler);
+
         listener = new AptumClientListener(this);
         client = new NetManager(listener);
         listener.NetManager(client);
+
         client.Start();
         client.Connect("192.168.1.92", 12733, "Aptum");
     }
