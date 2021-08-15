@@ -64,10 +64,12 @@ public class UIManager : MonoBehaviour
     #region ButtonImplementations
     public void SingleplayerButton()
     {
+        Debug.Log("Singleplayer!");
         SetUIState(UIState.Game);
     }
     public void MultiplayerButton()
     {
+        Debug.Log("Multiplayer!");
         if (!aptumClient.IsConnected)
         {
             DisplayMessage("Could not connect to servers");
@@ -77,10 +79,12 @@ public class UIManager : MonoBehaviour
     }
     public void QuitButton()
     {
+        Debug.Log("Quit!");
         Application.Quit();
     }
     public void CreateLobbyButton()
     {
+        Debug.Log("Create Lobby!");
         if (joiningLobby || creatingLobby)
         {
             DisplayMessage("Already connecting to lobby");
@@ -106,6 +110,7 @@ public class UIManager : MonoBehaviour
     }
     public void JoinLobbyButton()
     {
+        Debug.Log("Join Lobby!");
         if (joiningLobby || creatingLobby)
         {
             DisplayMessage("Already connecting to lobby");
@@ -146,6 +151,7 @@ public class UIManager : MonoBehaviour
     }
     public void PlayAgainButton()
     {
+        Debug.Log("Play Again!");
         SetUIState(UIState.Game);
         for (int y = 0; y < 8; y++)
         {
