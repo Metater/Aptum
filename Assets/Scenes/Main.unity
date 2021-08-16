@@ -3292,14 +3292,9 @@ MonoBehaviour:
   nameTextbox: {fileID: 250231921}
   joinCodeTextbox: {fileID: 557171622}
   inviteCodeText: {fileID: 821529213}
-  opponentText: {fileID: 1825646176}
-  selfScoreText: {fileID: 397991286}
-  otherScoreText: {fileID: 72282339}
-  messages: {fileID: 2129848853}
+  messagesText: {fileID: 2129848853}
   selfGrid: {fileID: 1013681524}
   otherGrid: {fileID: 1809916770}
-  selfScore: 0
-  otherScore: 0
 --- !u!114 &1512731257
 MonoBehaviour:
   m_ObjectHideFlags: 0
