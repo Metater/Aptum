@@ -5,20 +5,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using AptumClient;
 
 public class UIManager : MonoBehaviour
 {
     public Aptum aptumClient;
-
-    public enum UIState
-    {
-        Welcome,
-        Selection,
-        WaitingLobby,
-        WaitingToStart,
-        Game,
-        GameOver
-    }
 
     public UIState uiState;
 
@@ -34,13 +25,7 @@ public class UIManager : MonoBehaviour
 
     public Text inviteCodeText;
     public Text messagesText;
-    private float messageVisableFor = 0;
-
-    public GameObject selfGrid;
-    public GameObject otherGrid;
-
-    private bool joiningLobby = false;
-    private bool creatingLobby = false;
+    private float messageDuration = 0;
 
     private void Start()
     {
@@ -49,9 +34,9 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (messageVisableFor >= 0)
+        if (messageDuration >= 0)
         {
-            messageVisableFor -= Time.deltaTime;
+            messageDuration -= Time.deltaTime;
             messagesText.gameObject.SetActive(true);
         }
         else
@@ -79,75 +64,15 @@ public class UIManager : MonoBehaviour
     }
     public void QuitButton()
     {
-        Debug.Log("Quit!");
-        Application.Quit();
+        AptumClientManager.I.UIReceive.QuitButton();
     }
     public void CreateLobbyButton()
     {
-        Debug.Log("Create Lobby!");
-        if (joiningLobby || creatingLobby)
-        {
-            DisplayMessage("Already connecting to lobby");
-            return;
-        }
-        if (nameTextbox.text == "")
-        {
-            DisplayMessage("Enter your name");
-            return;
-        }
-        if (nameTextbox.text.Length > 16)
-        {
-            DisplayMessage("Name is too long");
-            return;
-        }
-
-        RequestCreateLobbyPacket requestCreateLobbyPacket = new RequestCreateLobbyPacket
-        { LeaderName = nameTextbox.text };
-        aptumClient.Send(aptumClient.GetProcessor().Write(requestCreateLobbyPacket), DeliveryMethod.ReliableOrdered);
-
-        creatingLobby = true;
-        DisplayMessage("Creating Lobby...");
+        AptumClientManager.I.UIReceive.CreateLobbyButton(nameTextbox.text);
     }
     public void JoinLobbyButton()
     {
-        Debug.Log("Join Lobby!");
-        if (joiningLobby || creatingLobby)
-        {
-            DisplayMessage("Already connecting to lobby");
-            return;
-        }
-        if (nameTextbox.text == "")
-        {
-            DisplayMessage("Enter your name");
-            return;
-        }
-        if (nameTextbox.text.Length > 16)
-        {
-            DisplayMessage("Name is too long");
-            return;
-        }
-
-        if (int.TryParse(joinCodeTextbox.text, out int joinCode))
-        {
-            if (joinCode < 0 || joinCode > 1000)
-            {
-                DisplayMessage("Failed to parse join code");
-                return;
-            }
-
-            RequestJoinLobbyPacket requestJoinLobbyPacket = new RequestJoinLobbyPacket
-            { Name = nameTextbox.text, JoinCode = joinCode };
-            aptumClient.Send(aptumClient.GetProcessor().Write(requestJoinLobbyPacket), DeliveryMethod.ReliableOrdered);
-
-            joiningLobby = true;
-            DisplayMessage("Joining Lobby...");
-            aptumClient.SetCurrentJoinCode(joinCode);
-        }
-        else
-        {
-            DisplayMessage("Failed to parse join code");
-            return;
-        }
+        AptumClientManager.I.UIReceive.JoinLobbyButton(nameTextbox.text, joinCodeTextbox.text);
     }
     public void PlayAgainButton()
     {
@@ -163,19 +88,10 @@ public class UIManager : MonoBehaviour
     }
     #endregion ButtonImplementations
 
-    #region StateUpdates
-    public void CreatedLobby(int inviteCode)
+    private void SetActive(List<GameObject> gos, bool value)
     {
-        SetUIState(UIState.WaitingLobby);
-        inviteCodeText.text = "Code:\n" + inviteCode;
+        gos.ForEach((go) => go.SetActive(value));
     }
-    public void JoinedLobby()
-    {
-        SetUIState(UIState.WaitingLobby);
-        inviteCodeText.text = "Code:\n" + aptumClient.CurrentJoinCode;
-    }
-    #endregion StateUpdates
-
     public void SetUIState(UIState state)
     {
         uiState = state;
@@ -209,14 +125,15 @@ public class UIManager : MonoBehaviour
                 break;
         }
     }
-    private void SetActive(List<GameObject> gos, bool value)
+
+    public void DisplayMessage(string message, float duration = 5)
     {
-        gos.ForEach((go) => go.SetActive(value));
+        messageDuration = duration;
+        messagesText.text = message;
     }
 
-    public void DisplayMessage(string message, float messageVisibleFor = 5)
+    public void DisplayJoinCode(int joinCode)
     {
-        this.messageVisableFor = messageVisibleFor;
-        messagesText.text = message;
+        inviteCodeText.text = "Code:\n" + joinCode;
     }
 }

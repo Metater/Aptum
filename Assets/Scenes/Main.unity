@@ -4424,6 +4424,7 @@ MonoBehaviour:
   uiManager: {fileID: 1512731256}
   placementManager: {fileID: 1512731257}
   colorDictionary: {fileID: 1512731255}
+  boardsManager: {fileID: 1512731258}
   selfBoard: {fileID: 1013681525}
   otherBoard: {fileID: 1809916771}
 --- !u!4 &1512731254
@@ -4484,11 +4485,7 @@ MonoBehaviour:
   onWaitingToStart:
   - {fileID: 2108404184}
   - {fileID: 1085124899}
-  onGame:
-  - {fileID: 397991284}
-  - {fileID: 1013681524}
-  - {fileID: 72282337}
-  - {fileID: 1809916770}
+  onGame: []
   onGameOver:
   - {fileID: 397991284}
   - {fileID: 1013681524}
@@ -4570,7 +4567,6 @@ MonoBehaviour:
   - {fileID: 1102790476}
   - {fileID: 39659448}
   - {fileID: 2021980274}
-  test: 1
 --- !u!1 &1630854510
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using UnityEngine;
 using AptumShared.Utils;
 using AptumShared.Enums;
 using AptumShared.Structs;
+using AptumClient;
 
 public class PlacementManager : MonoBehaviour
 {
@@ -29,7 +30,8 @@ public class PlacementManager : MonoBehaviour
 
     private void Update()
     {
-        //if (!seedLoaded || !aptumClient.connected) return;
+        if (!AptumClientManager.I.State.isInGame) return;
+
         if ((Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
         {
             Debug.Log("E321312");

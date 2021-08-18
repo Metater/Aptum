@@ -20,20 +20,20 @@ namespace Assets.Scripts.ClientHandler
 
         public void PlacePiece(int boardIndex, Piece piece, (int, int) pos)
         {
-            int boardLayout = AptumClientManager.I.AptumClientState.boardLayout;
+            int boardLayout = AptumClientManager.I.State.boardLayout;
             BoardHandler board = aptum.boardsManager.GetBoard(boardLayout, boardIndex);
             board.PlacePiece(piece.cellOffsets, pos, aptum.colorDictionary.colors[(int)piece.color]);
         }
 
         public void WipeLine(int boardIndex, int index, bool horizontal)
         {
-            aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).WipeLine(index, horizontal);
+            aptum.boardsManager.GetBoard(AptumClientManager.I.State.boardLayout, boardIndex).WipeLine(index, horizontal);
         }
 
         public void WipeBoard(int boardIndex)
         {
             bool horizontal = UnityEngine.Random.Range(0, 2) == 1;
-            aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).WipeBlock(0, 8, horizontal);
+            aptum.boardsManager.GetBoard(AptumClientManager.I.State.boardLayout, boardIndex).WipeBlock(0, 8, horizontal);
         }
     }
 }
