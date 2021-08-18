@@ -4471,7 +4471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aptumClient: {fileID: 1512731253}
-  uiState: 0
+  uiState: 4
   onWelcome:
   - {fileID: 2108404184}
   - {fileID: 109350053}
@@ -4570,6 +4570,7 @@ MonoBehaviour:
   - {fileID: 1102790476}
   - {fileID: 39659448}
   - {fileID: 2021980274}
+  test: 1
 --- !u!1 &1630854510
 GameObject:
   m_ObjectHideFlags: 0

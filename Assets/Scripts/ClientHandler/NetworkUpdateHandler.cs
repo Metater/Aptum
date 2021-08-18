@@ -16,9 +16,10 @@ namespace Assets.Scripts.ClientHandler
             this.aptum = aptum;
         }
 
-        public void Connect()
+        public void Connect(string address, int port, string key)
         {
-            throw new NotImplementedException();
+            aptum.client.Start();
+            aptum.client.Connect(address, port, key);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using AptumShared.Utils;
 using AptumShared.Enums;
+using AptumShared.Structs;
 
 public class BoardHandler : MonoBehaviour
 {
@@ -155,10 +156,20 @@ public class BoardHandler : MonoBehaviour
         }
         int wipes = TryWipe();
 
+        // Bad logic, do for every peice
         if (!CheckPieceFitOnBoard(cells))
         {
             aptumClient.uiManager.SetUIState(UIManager.UIState.GameOver);
             aptumClient.uiManager.DisplayMessage("Game Over!");
+        }
+    }
+
+    public void PlacePiece(Piece piece, (int, int) pos, Color color)
+    {
+        foreach ((int, int) cellOffset in piece.cellOffsets)
+        {
+            (int, int) offsetPos = (pos.Item1 + cellOffset.Item1, pos.Item2 + cellOffset.Item2);
+            PlaceCell(offsetPos.Item1, offsetPos.Item2, color);
         }
     }
 

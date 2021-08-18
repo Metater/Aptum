@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AptumClient.Interfaces;
 using AptumShared.Structs;
+using AptumClient;
 
 namespace Assets.Scripts.ClientHandler
 {
@@ -17,19 +18,19 @@ namespace Assets.Scripts.ClientHandler
             this.aptum = aptum;
         }
 
-        public void ClearLine(int boardId)
+        public void ClearLine(int boardIndex)
         {
             throw new NotImplementedException();
         }
 
-        public void PlacePiece(int boardId, Piece piece, (int, int) pos)
+        public void PlacePiece(int boardIndex, Piece piece, (int, int) pos)
         {
-            throw new NotImplementedException();
+            aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).PlacePiece(piece, pos, aptum.colorDictionary.colors[(int)piece.color]);
         }
 
-        public void WipeBoard(int boardId)
+        public void WipeBoard(int boardIndex)
         {
-            throw new NotImplementedException();
+            //aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).
         }
     }
 }

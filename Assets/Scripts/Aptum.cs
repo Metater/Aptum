@@ -20,6 +20,7 @@ public class Aptum : MonoBehaviour
     public UIManager uiManager;
     public PlacementManager placementManager;
     public ColorDictionary colorDictionary;
+    public BoardsManager boardsManager;
     public BoardHandler selfBoard;
     public BoardHandler otherBoard;
 
@@ -30,19 +31,16 @@ public class Aptum : MonoBehaviour
 
     private void Start()
     {
+        listener = new AptumClientListener(this);
+        client = new NetManager(listener);
+        listener.NetManager(client);
+
         netSendUpdateHandler = new NetSendUpdateHandler(this);
         graphicsUpdateHandler = new GraphicsUpdateHandler(this);
         uiWriteUpdateHandler = new UIWriteUpdateHandler(this);
         networkUpdateHandler = new NetworkUpdateHandler(this);
 
         AptumClientManager.I.Init(netSendUpdateHandler, graphicsUpdateHandler, uiWriteUpdateHandler, networkUpdateHandler);
-
-        listener = new AptumClientListener(this);
-        client = new NetManager(listener);
-        listener.NetManager(client);
-
-        client.Start();
-        client.Connect("192.168.1.92", 12733, "Aptum");
     }
 
     private void Update()
