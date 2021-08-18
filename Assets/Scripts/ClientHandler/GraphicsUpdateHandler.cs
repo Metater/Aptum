@@ -18,19 +18,22 @@ namespace Assets.Scripts.ClientHandler
             this.aptum = aptum;
         }
 
-        public void ClearLine(int boardIndex)
-        {
-            throw new NotImplementedException();
-        }
-
         public void PlacePiece(int boardIndex, Piece piece, (int, int) pos)
         {
-            aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).PlacePiece(piece, pos, aptum.colorDictionary.colors[(int)piece.color]);
+            int boardLayout = AptumClientManager.I.AptumClientState.boardLayout;
+            BoardHandler board = aptum.boardsManager.GetBoard(boardLayout, boardIndex);
+            board.PlacePiece(piece.cellOffsets, pos, aptum.colorDictionary.colors[(int)piece.color]);
+        }
+
+        public void WipeLine(int boardIndex, int index, bool horizontal)
+        {
+            aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).WipeLine(index, horizontal);
         }
 
         public void WipeBoard(int boardIndex)
         {
-            //aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).
+            bool horizontal = UnityEngine.Random.Range(0, 2) == 1;
+            aptum.boardsManager.GetBoard(AptumClientManager.I.AptumClientState.boardLayout, boardIndex).WipeBlock(0, 8, horizontal);
         }
     }
 }
