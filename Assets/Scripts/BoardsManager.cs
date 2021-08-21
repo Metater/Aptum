@@ -14,8 +14,7 @@ public class BoardsManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (GameObject boardLayout in boardLayouts)
-            boardLayout.SetActive(false);
+        boardLayouts.ForEach((boardLayout) => boardLayout.SetActive(false));
     }
 
     private void Update()

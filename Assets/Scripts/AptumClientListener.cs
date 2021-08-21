@@ -64,14 +64,14 @@ namespace AptumServer
 
         public void OnPeerConnected(NetPeer peer)
         {
-            aptumClient.Connected();
+            //aptumClient.Connected();
         }
 
         public void OnPeerDisconnected(NetPeer peer, DisconnectInfo disconnectInfo)
         {
-            aptumClient.Connected(true);
-            aptumClient.uiManager.SetUIState(UIManager.UIState.Welcome);
-            aptumClient.uiManager.DisplayMessage("Disconnected from servers");
+            //aptumClient.Connected(true);
+            //aptumClient.uiManager.SetUIState(UIManager.UIState.Welcome);
+            //aptumClient.uiManager.DisplayMessage("Disconnected from servers");
         }
 
         private void OnDenyPacketReceived(DenyPacket packet, NetPeer peer)
@@ -80,24 +80,26 @@ namespace AptumServer
         }
         private void OnCreatedLobbyPacketReceived(CreatedLobbyPacket packet, NetPeer peer)
         {
-            Debug.Log("Created lobby, code is: " + packet.JoinCode);
-            aptumClient.uiManager.CreatedLobby(packet.JoinCode);
+            //Debug.Log("Created lobby, code is: " + packet.JoinCode);
+            //aptumClient.uiManager.CreatedLobby(packet.JoinCode);
         }
         private void OnJoinedLobbyPacketReceived(JoinedLobbyPacket packet, NetPeer peer)
         {
-            aptumClient.uiManager.JoinedLobby();
+            //aptumClient.uiManager.JoinedLobby();
         }
         private void OnUpdatePlayersPacketReceived(UpdatePlayersPacket packet, NetPeer peer)
         {
+            /*
             foreach (string playerName in packet.PlayerNames)
             {
                 Debug.Log("Player Acked: " + playerName);
             }
+            */
         }
         private void OnStartGamePacketReceived(StartGamePacket packet, NetPeer peer)
         {
-            aptumClient.JoinedGame();
-            aptumClient.placementManager.LoadSeed(packet.PieceGenerationSeed);
+            //aptumClient.JoinedGame();
+            //aptumClient.placementManager.LoadSeed(packet.PieceGenerationSeed);
         }
         private void OnPiecePlacedPacketReceived(PiecePlacedPacket packet, NetPeer peer)
         {

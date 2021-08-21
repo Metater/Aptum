@@ -32,6 +32,7 @@ public class PlacementManager : MonoBehaviour
     {
         if (!AptumClientManager.I.State.isInGame) return;
 
+        /*
         if ((Input.touchCount == 1 && Input.touches[0].phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
         {
             Debug.Log("E321312");
@@ -96,10 +97,12 @@ public class PlacementManager : MonoBehaviour
                 pieces[draggedSlot].transform.position = placementPoints[draggedSlot].transform.position;
             }
         }
+        */
     }
 
     public void LoadSeed(int seed)
     {
+        /*
         pieceGenerator = new PieceGenerator(seed);
         seedLoaded = true;
         for (int i = 0; i < 3; i++)
@@ -112,5 +115,6 @@ public class PlacementManager : MonoBehaviour
             pieceHandler.color = piece.Item2;
             pieces[i].transform.localScale = new Vector3(0.2f, 0.2f);
         }
+        */
     }
 }

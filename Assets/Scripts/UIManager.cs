@@ -34,6 +34,11 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
+        FadeMessages();
+    }
+
+    private void FadeMessages()
+    {
         if (messageDuration >= 0)
         {
             messageDuration -= Time.deltaTime;
@@ -49,18 +54,11 @@ public class UIManager : MonoBehaviour
     #region ButtonImplementations
     public void SingleplayerButton()
     {
-        Debug.Log("Singleplayer!");
-        SetUIState(UIState.Game);
+        AptumClientManager.I.UIReceive.SingleplayerButton();
     }
     public void MultiplayerButton()
     {
-        Debug.Log("Multiplayer!");
-        if (!aptumClient.IsConnected)
-        {
-            DisplayMessage("Could not connect to servers");
-            return;
-        }
-        SetUIState(UIState.Selection);
+        AptumClientManager.I.UIReceive.MultiplayerButton();
     }
     public void QuitButton()
     {
@@ -76,15 +74,7 @@ public class UIManager : MonoBehaviour
     }
     public void PlayAgainButton()
     {
-        Debug.Log("Play Again!");
-        SetUIState(UIState.Game);
-        for (int y = 0; y < 8; y++)
-        {
-            for (int x = 0; x < 8; x++)
-            {
-                aptumClient.selfBoard.RemoveCell(x, y);
-            }
-        }
+        AptumClientManager.I.UIReceive.PlayAgainButton();
     }
     #endregion ButtonImplementations
 
