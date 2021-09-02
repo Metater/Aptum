@@ -237,11 +237,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 35153498}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &35153497
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -354,11 +349,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 39659450}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &39659449
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -762,11 +752,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 93339469}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &93339468
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1696,11 +1681,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 509543901}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &509543900
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2255,17 +2235,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 560879197}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
-  - {fileID: 11400000, guid: 3ffcef4cc432a2045b8bddd4b32c2744, type: 2}
-  - {fileID: 11400000, guid: 68cf1219d5a86c3479f3c253735978ff, type: 2}
-  - {fileID: 11400000, guid: 8c196f709c9f74746bc32dafd80d6056, type: 2}
-  - {fileID: 11400000, guid: b4895ed847e9b714c953b5f322e02d1d, type: 2}
-  - {fileID: 11400000, guid: 258ffa2301a520b449ae7b347ca7f000, type: 2}
-  - {fileID: 11400000, guid: 1733c3e10c4477b45a977b0bc29c00e1, type: 2}
 --- !u!212 &560879196
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2904,17 +2873,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1013681527}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
-  - {fileID: 11400000, guid: 3ffcef4cc432a2045b8bddd4b32c2744, type: 2}
-  - {fileID: 11400000, guid: 68cf1219d5a86c3479f3c253735978ff, type: 2}
-  - {fileID: 11400000, guid: 8c196f709c9f74746bc32dafd80d6056, type: 2}
-  - {fileID: 11400000, guid: b4895ed847e9b714c953b5f322e02d1d, type: 2}
-  - {fileID: 11400000, guid: 258ffa2301a520b449ae7b347ca7f000, type: 2}
-  - {fileID: 11400000, guid: 1733c3e10c4477b45a977b0bc29c00e1, type: 2}
 --- !u!212 &1013681526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3315,11 +3273,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1102790478}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &1102790477
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3794,11 +3747,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1164478772}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &1164478771
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3911,17 +3859,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1180727782}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
-  - {fileID: 11400000, guid: 3ffcef4cc432a2045b8bddd4b32c2744, type: 2}
-  - {fileID: 11400000, guid: 68cf1219d5a86c3479f3c253735978ff, type: 2}
-  - {fileID: 11400000, guid: 8c196f709c9f74746bc32dafd80d6056, type: 2}
-  - {fileID: 11400000, guid: b4895ed847e9b714c953b5f322e02d1d, type: 2}
-  - {fileID: 11400000, guid: 258ffa2301a520b449ae7b347ca7f000, type: 2}
-  - {fileID: 11400000, guid: 1733c3e10c4477b45a977b0bc29c00e1, type: 2}
 --- !u!212 &1180727781
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4237,17 +4174,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1323637224}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
-  - {fileID: 11400000, guid: 3ffcef4cc432a2045b8bddd4b32c2744, type: 2}
-  - {fileID: 11400000, guid: 68cf1219d5a86c3479f3c253735978ff, type: 2}
-  - {fileID: 11400000, guid: 8c196f709c9f74746bc32dafd80d6056, type: 2}
-  - {fileID: 11400000, guid: b4895ed847e9b714c953b5f322e02d1d, type: 2}
-  - {fileID: 11400000, guid: 258ffa2301a520b449ae7b347ca7f000, type: 2}
-  - {fileID: 11400000, guid: 1733c3e10c4477b45a977b0bc29c00e1, type: 2}
 --- !u!212 &1323637223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4472,7 +4398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aptumClient: {fileID: 1512731253}
-  uiState: 4
+  uiState: 0
   onWelcome:
   - {fileID: 2108404184}
   - {fileID: 109350053}
@@ -4496,8 +4422,6 @@ MonoBehaviour:
   joinCodeTextbox: {fileID: 557171622}
   inviteCodeText: {fileID: 821529213}
   messagesText: {fileID: 2129848853}
-  selfGrid: {fileID: 1013681524}
-  otherGrid: {fileID: 1809916770}
 --- !u!114 &1512731257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4778,11 +4702,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1639743179}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &1639743178
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4895,17 +4814,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1679790522}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
-  - {fileID: 11400000, guid: 3ffcef4cc432a2045b8bddd4b32c2744, type: 2}
-  - {fileID: 11400000, guid: 68cf1219d5a86c3479f3c253735978ff, type: 2}
-  - {fileID: 11400000, guid: 8c196f709c9f74746bc32dafd80d6056, type: 2}
-  - {fileID: 11400000, guid: b4895ed847e9b714c953b5f322e02d1d, type: 2}
-  - {fileID: 11400000, guid: 258ffa2301a520b449ae7b347ca7f000, type: 2}
-  - {fileID: 11400000, guid: 1733c3e10c4477b45a977b0bc29c00e1, type: 2}
 --- !u!212 &1679790521
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5036,11 +4944,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1809916773}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &1809916772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5167,11 +5070,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 1824130666}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &1824130665
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5363,11 +5261,6 @@ MonoBehaviour:
   aptumClient: {fileID: 1512731253}
   grid: {fileID: 2021980276}
   cellPrefab: {fileID: 3960146422294545902, guid: c50742b9f8a39e54f95024816c2220f4, type: 3}
-  pieces:
-  - {fileID: 11400000, guid: 153936bee00ce0e4798f172405c657b3, type: 2}
-  - {fileID: 11400000, guid: a3677d31413ffdf43a803952d1f1ba39, type: 2}
-  - {fileID: 11400000, guid: 3ace1be9a06fd5f4d85cf2425d597ae5, type: 2}
-  - {fileID: 11400000, guid: 2e95b88432ce127429d5efc49b328877, type: 2}
 --- !u!212 &2021980275
 SpriteRenderer:
   m_ObjectHideFlags: 0

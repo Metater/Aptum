@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using AptumShared.Enums;
+using AptumShared.Structs;
+using AptumShared;
 
 public class PiecePrefabGenerator : MonoBehaviour
 {
@@ -15,6 +17,13 @@ public class PiecePrefabGenerator : MonoBehaviour
         {
             return prefab;
         }
+        return FormPiecePrefab(pieceType);
+    }
+
+    private GameObject FormPiecePrefab(PieceType pieceType)
+    {
+        Piece piece = PieceDictionary.GetPiece(pieceType);
+        // It has to be known where the root pos is
         return null;
     }
 }
