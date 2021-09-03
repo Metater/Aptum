@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AptumClient.Interfaces;
 using AptumShared.Packets;
+using LiteNetLib;
 
 namespace Assets.Scripts.ClientHandler
 {
@@ -19,27 +20,27 @@ namespace Assets.Scripts.ClientHandler
 
         public void Send(RequestCreateLobbyPacket packet)
         {
-            throw new NotImplementedException();
+            aptum.client.FirstPeer.Send(aptum.listener.packetProcessor.Write(packet), DeliveryMethod.ReliableOrdered);
         }
 
         public void Send(RequestJoinLobbyPacket packet)
         {
-            throw new NotImplementedException();
+            aptum.client.FirstPeer.Send(aptum.listener.packetProcessor.Write(packet), DeliveryMethod.ReliableOrdered);
         }
 
         public void Send(RequestStartGamePacket packet)
         {
-            throw new NotImplementedException();
+            aptum.client.FirstPeer.Send(aptum.listener.packetProcessor.Write(packet), DeliveryMethod.ReliableOrdered);
         }
 
         public void Send(RequestPlacePiecePacket packet)
         {
-            throw new NotImplementedException();
+            aptum.client.FirstPeer.Send(aptum.listener.packetProcessor.Write(packet), DeliveryMethod.ReliableOrdered);
         }
 
         public void Send(RequestPlayAgainPacket packet)
         {
-            throw new NotImplementedException();
+            aptum.client.FirstPeer.Send(aptum.listener.packetProcessor.Write(packet), DeliveryMethod.ReliableOrdered);
         }
     }
 }

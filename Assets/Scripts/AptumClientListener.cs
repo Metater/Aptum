@@ -6,19 +6,20 @@ using UnityEngine;
 using LiteNetLib;
 using LiteNetLib.Utils;
 using AptumShared.Packets;
+using AptumShared.Enums;
 
 namespace AptumServer
 {
     public class AptumClientListener : INetEventListener
     {
         private NetManager client;
-        private Aptum aptumClient;
+        private Aptum aptum;
 
         public NetPacketProcessor packetProcessor = new NetPacketProcessor();
 
-        public AptumClientListener(Aptum aptumClient)
+        public AptumClientListener(Aptum aptum)
         {
-            this.aptumClient = aptumClient;
+            this.aptum = aptum;
             packetProcessor.SubscribeReusable<DenyPacket, NetPeer>(OnDenyPacketReceived);
             packetProcessor.SubscribeReusable<CreatedLobbyPacket, NetPeer>(OnCreatedLobbyPacketReceived);
             packetProcessor.SubscribeReusable<JoinedLobbyPacket, NetPeer>(OnJoinedLobbyPacketReceived);
@@ -52,7 +53,6 @@ namespace AptumServer
 
         public void OnNetworkReceive(NetPeer peer, NetPacketReader reader, DeliveryMethod deliveryMethod)
         {
-            Debug.Log("[Client] received data. Processing...");
             packetProcessor.ReadAllPackets(reader, peer);
             reader.Recycle();
         }
@@ -64,11 +64,13 @@ namespace AptumServer
 
         public void OnPeerConnected(NetPeer peer)
         {
+            Debug.Log("[Client] Connected.");
             //aptumClient.Connected();
         }
 
         public void OnPeerDisconnected(NetPeer peer, DisconnectInfo disconnectInfo)
         {
+            Debug.Log("[Client] Disconnected.");
             //aptumClient.Connected(true);
             //aptumClient.uiManager.SetUIState(UIManager.UIState.Welcome);
             //aptumClient.uiManager.DisplayMessage("Disconnected from servers");
@@ -76,19 +78,22 @@ namespace AptumServer
 
         private void OnDenyPacketReceived(DenyPacket packet, NetPeer peer)
         {
-
+            Debug.Log($"[Client] Deny packet received, {((DenyReason)packet.DenyBitField)} denied.");
         }
         private void OnCreatedLobbyPacketReceived(CreatedLobbyPacket packet, NetPeer peer)
         {
+            Debug.Log($"[Client] Created lobby packet received, the join code is {packet.JoinCode}.");
             //Debug.Log("Created lobby, code is: " + packet.JoinCode);
             //aptumClient.uiManager.CreatedLobby(packet.JoinCode);
         }
         private void OnJoinedLobbyPacketReceived(JoinedLobbyPacket packet, NetPeer peer)
         {
+            Debug.Log("[Client] Joined lobby packet received.");
             //aptumClient.uiManager.JoinedLobby();
         }
         private void OnUpdatePlayersPacketReceived(UpdatePlayersPacket packet, NetPeer peer)
         {
+            Debug.Log("[Client] Update player packet received.");
             /*
             foreach (string playerName in packet.PlayerNames)
             {
@@ -98,24 +103,25 @@ namespace AptumServer
         }
         private void OnStartGamePacketReceived(StartGamePacket packet, NetPeer peer)
         {
+            Debug.Log("[Client] Start game packet received.");
             //aptumClient.JoinedGame();
             //aptumClient.placementManager.LoadSeed(packet.PieceGenerationSeed);
         }
         private void OnPiecePlacedPacketReceived(PiecePlacedPacket packet, NetPeer peer)
         {
-
+            Debug.Log("[Client] Piece placed packet received.");
         }
         private void OnGameEndedPacketReceived(GameEndedPacket packet, NetPeer peer)
         {
-
+            Debug.Log("[Client] Game ended packet received.");
         }
         private void OnPlayAgainPacketReceived(PlayAgainPacket packet, NetPeer peer)
         {
-
+            Debug.Log("[Client] Play again packet received.");
         }
         private void OnLobbyClosePacketReceived(LobbyClosePacket packet, NetPeer peer)
         {
-
+            Debug.Log("[Client] Lobby close packet received.");
         }
     }
 }
